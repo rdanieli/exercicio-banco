@@ -18,8 +18,15 @@ public class Principal {
 		Conta c = new Conta(951, 001);
 		
 		nuBank.depositar(c, 120.0);
+
+		nuBank.sacar(c, 20.0);
+		
+		nuBank.depositar(c, 10.0);
+		nuBank.depositar(c, 15.0);
+		nuBank.depositar(c, 30.0);
+		nuBank.depositar(c, 90.0);
+		nuBank.depositar(c, 15000.0);
 		
 		nuBank.imprimirSaldo(c);
-		//nuBank.sacar(...);
 	}
 }

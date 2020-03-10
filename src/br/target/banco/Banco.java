@@ -13,23 +13,32 @@ public class Banco {
 			Conta conta = contas.get(i);
 			
 			if(conta.getNumero().equals(contaParaDeposito.getNumero())) {
-				Movimento movimentoDeDeposito = new Movimento();
-				movimentoDeDeposito.setTipo(0);
-				movimentoDeDeposito.setDescricao("Depósito em conta corrente.");
-				movimentoDeDeposito.setValor(valor);
-				
-				conta.getMovimentos().add(movimentoDeDeposito);
-				
-				System.out.println("Gerando movimentação...");
-				
+				conta.getMovimentos().add(gerarMovimentacao("Depósito em conta corrente.", valor, 0));
 				break;
 			}
 		}
 	}
 
-	public void sacar() {
-		// TODO Auto-generated method stub
+	private Movimento gerarMovimentacao(String descricao, Double valor, Integer tipo) {
+		Movimento movimentoDeDeposito = new Movimento();
+		movimentoDeDeposito.setTipo(tipo);
+		movimentoDeDeposito.setDescricao(descricao);
+		movimentoDeDeposito.setValor(valor);
 		
+		System.out.println("Gerando movimentação...");
+		
+		return movimentoDeDeposito;
+	}
+	
+	public void sacar(Conta contaDeSaque, Double valor) {
+		for(int i = 0; i < contas.size(); i++) {
+			Conta conta = contas.get(i);
+			
+			if(conta.getNumero().equals(contaDeSaque.getNumero())) {
+				conta.getMovimentos().add(gerarMovimentacao("Saque em conta corrente.", valor, 1));
+				break;
+			}
+		}
 	}
 		
 	public void setContas(List<Conta> contas) {
