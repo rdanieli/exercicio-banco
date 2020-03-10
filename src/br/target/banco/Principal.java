@@ -15,7 +15,6 @@ public class Principal {
 		
 		nuBank.setContas(minhasContasDoBanco);
 		
-		//Objetos da conta criados anteriormente
 		Conta c = new Conta(951, 001);
 		
 		nuBank.depositar(c, 120.0);

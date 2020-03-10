@@ -20,6 +20,8 @@ public class Banco {
 				
 				conta.getMovimentos().add(movimentoDeDeposito);
 				
+				System.out.println("Gerando movimentação...");
+				
 				break;
 			}
 		}
@@ -40,8 +42,8 @@ public class Banco {
 			
 			if(conta.getNumero().equals(c.getNumero())) {
 				
-				for(int j = 0; j < c.getMovimentos().size(); j++) {
-					Movimento movimento = c.getMovimentos().get(j);
+				for(int j = 0; j < conta.getMovimentos().size(); j++) {
+					Movimento movimento = conta.getMovimentos().get(j);
 					
 					if(movimento.getTipo() == 0) {
 						System.out.println("Movimento de deposito de: "+ movimento.getValor());
