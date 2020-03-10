@@ -11,6 +11,11 @@ public class Conta {
 	
 	private List<Movimento> movimentos = new ArrayList<Movimento>();
 
+	public Conta(Integer numero, Integer agencia) {
+		this.numero = numero;
+		this.agencia = agencia;
+	}
+	
 	public Integer getNumero() {
 		return numero;
 	}
