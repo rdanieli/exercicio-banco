@@ -46,9 +46,12 @@ public class Banco {
 	}
 
 	public void imprimirSaldo(Conta c) {
-		for(int i = 0; i < contas.size(); i++) {
-			Conta conta = contas.get(i);
-			
+//		for(int i = 0; i < contas.size(); i++) {
+//			Conta conta = contas.get(i);
+		
+		for(Conta conta : contas) {
+		
+		
 			if(conta.getNumero().equals(c.getNumero())) {
 				
 				for(int j = 0; j < conta.getMovimentos().size(); j++) {
