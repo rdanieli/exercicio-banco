@@ -54,15 +54,21 @@ public class Banco {
 		
 			if(conta.getNumero().equals(c.getNumero())) {
 				
-				for(int j = 0; j < conta.getMovimentos().size(); j++) {
-					Movimento movimento = conta.getMovimentos().get(j);
-					
+//				for(int j = 0; j < conta.getMovimentos().size(); j++) {
+//					Movimento movimento = conta.getMovimentos().get(j);
+				Double saldo = 0.0;
+				
+				for(Movimento movimento : conta.getMovimentos()){
 					if(movimento.getTipo() == 0) {
-						System.out.println("Movimento de deposito de: "+ movimento.getValor());
+						saldo += movimento.getValor();
+						//System.out.println("Movimento de deposito de: "+ movimento.getValor());
 					} else if (movimento.getTipo() == 1){
-						System.out.println("Movimento de saque de: "+ movimento.getValor());
+						saldo -= movimento.getValor();
+						//System.out.println("Movimento de saque de: "+ movimento.getValor());
 					}
 				}
+				
+				System.out.println("Seu saldo é: "+ saldo);
 			}
 		}
 	}
