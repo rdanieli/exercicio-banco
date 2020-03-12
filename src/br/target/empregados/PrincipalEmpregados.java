@@ -1,5 +1,8 @@
 package br.target.empregados;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PrincipalEmpregados {
 	
 	public static void main(String[] args) {
@@ -10,6 +13,17 @@ public class PrincipalEmpregados {
 		Gerente gerenteVariavel = new Gerente();
 		gerenteVariavel.setNome("Gerentão");
 		
+		//Polimorfismo
+		//Recebivel recebivel = new Gerente();
+		
+		List<Empregado> empregados = new ArrayList<Empregado>();
+		empregados.add(vendedorVariavel);
+		empregados.add(gerenteVariavel);
+		
+		for (Empregado empregado : empregados) {
+			empregado.calcularRendimentos();
+			empregado.getNome();
+		}
 	}
 	
 }
