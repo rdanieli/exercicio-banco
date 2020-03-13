@@ -10,4 +10,12 @@ public class Vendedor extends Empregado {
 		return comissao * valorDasVendas;
 	}
 
+	public void setComissao(double comissao) {
+		this.comissao = comissao;
+	}
+	
+	public void setValorDasVendas(double valorDasVendas) {
+		this.valorDasVendas = valorDasVendas;
+	}
+	
 }

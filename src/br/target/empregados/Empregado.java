@@ -11,5 +11,4 @@ public abstract class Empregado implements Recebivel {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
 }
