@@ -17,7 +17,7 @@ public enum OpcoesEntrada {
 		return opcao;
 	}
 
-	static OpcoesEntrada obtemEntrada(int tipo) {
+	static OpcoesEntrada obtemEntrada(int tipo) throws EntradaInvalidaException {
 		for(int i = 0; i < OpcoesEntrada.values().length; i++) {
 			OpcoesEntrada opcoesEntrada = OpcoesEntrada.values()[i];
 			
@@ -27,7 +27,7 @@ public enum OpcoesEntrada {
 		}
 		
 		
-		return null;
+		throw new EntradaInvalidaException();
 	}
 	
 	

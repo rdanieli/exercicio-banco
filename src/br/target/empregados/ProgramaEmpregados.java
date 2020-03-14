@@ -15,7 +15,14 @@ public class ProgramaEmpregados {
 
 			Scanner sc = new Scanner(System.in);
 
-			OpcoesEntrada tipo = OpcoesEntrada.obtemEntrada(sc.nextInt());
+			OpcoesEntrada tipo = null;
+		
+			try {
+				tipo = OpcoesEntrada.obtemEntrada(sc.nextInt());
+			} catch (EntradaInvalidaException e) {
+				System.out.println("ENTRADA INVÁLIDA!!!");
+				continue;
+			}
 
 			System.out.println("Você digitou: " + tipo);
 
@@ -54,10 +61,6 @@ public class ProgramaEmpregados {
 			} else if(OpcoesEntrada.SAIR.equals(tipo)) {
 				
 				interromperPrograma = true;
-				
-			} else {
-				
-				System.out.println("ENTRADA INVÁLIDA!!!");
 				
 			}
 
