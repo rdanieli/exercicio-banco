@@ -66,11 +66,31 @@ public class ProgramaEmpregados {
 				break;
 			}
 
+			System.out.println("informe o nome:");
 			empregado.setNome(sc.next());
 
 			double valorRendimentos = empregado.calcularRendimentos();
 
 			System.out.println("Os rendimentos de " + empregado.getNome() + " são de: " + valorRendimentos);
+		}
+	}
+
+	public void testeException() {
+		imprimePosicao(5);
+	}
+	
+	public void imprimePosicao(int i) {
+		try 
+		{
+			String[] meuArray = {"TESTE","DE","EXCEPTION"};
+			
+			System.out.println("Valor obtido: " + meuArray[i]);
+		} 
+		
+		catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("DEU ERRO.. POSIÇÃO " + i + " É INVALIDA");
+			
+			throw e;
 		}
 	}
 }
